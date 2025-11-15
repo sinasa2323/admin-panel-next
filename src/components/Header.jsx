@@ -45,7 +45,7 @@ export default function Header() {
           }}
         />
 
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction="row" spacing={1} className='pr-4' alignItems="center">
           <Tooltip title="Notifications">
             <IconButton>
               <Badge color="error" variant="dot">
@@ -66,7 +66,7 @@ export default function Header() {
             </IconButton>
           </Tooltip>
 
-          {/* <Avatar alt="Admin" src="/avatar.jpg" sx={{ width: 32, height: 32 }} /> */}
+
         </Stack>
       </Toolbar>
     </AppBar>

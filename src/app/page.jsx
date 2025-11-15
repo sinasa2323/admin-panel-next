@@ -17,14 +17,14 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 
-// اضافه‌شده‌ها:
+
 import { useEffect, useState } from 'react';
 import { Snackbar, Alert } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useAuthStore } from '@/store/authStore';
 
 export default function Page() {
-  // اضافه‌شده‌ها: کنترل نوتیفیکیشن خوش‌آمدگویی
+
   const justLoggedIn = useAuthStore((s) => s.justLoggedIn);
   const consumeJustLoggedIn = useAuthStore((s) => s.consumeJustLoggedIn);
   const [openWelcome, setOpenWelcome] = useState(false);
@@ -38,7 +38,7 @@ export default function Page() {
 
   return (
     <div className="space-y-4 ">
-      {/* اضافه‌شده‌ها: Snackbar خوش‌آمدگویی بالا-راست (5 ثانیه) */}
+      {/* Welcome Message */}
       <Snackbar
         open={openWelcome}
         autoHideDuration={5000}

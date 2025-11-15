@@ -19,6 +19,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useAuthStore } from '@/store/authStore';
 import { useRouter } from 'next/navigation';
+import { grey } from '@mui/material/colors';
 
 const DEMO_EMAIL = 'sinasa2323@gmail.com';
 const DEMO_PASS = 'admin';
@@ -31,7 +32,7 @@ export default function LoginPage() {
     const [pass, setPass] = useState('');
     const [error, setError] = useState('');
 
-    // وضعیت کپی برای هر مورد
+
     const [copiedEmail, setCopiedEmail] = useState(false);
     const [copiedPass, setCopiedPass] = useState(false);
 
@@ -61,6 +62,12 @@ export default function LoginPage() {
         }
     };
 
+    const autoFillHandler = () => {
+        setEmail(DEMO_EMAIL);
+        setPass(DEMO_PASS);
+
+    }
+
     return (
         <Box className="min-h-screen flex items-center justify-center px-3">
             <Card sx={{ width: 420, maxWidth: '100%' }}>
@@ -72,7 +79,7 @@ export default function LoginPage() {
                     <Stack spacing={2} component="form" onSubmit={onSubmit} >
                         <Alert severity="info">
                             <Stack spacing={1}>
-                                {/* ایمیل + آیکون کپی + متن copied! کنار آیکون */}
+
                                 <div className="flex items-center w-full justify-between">
                                     <Typography variant="body2" sx={{ marginRight: 5 }}>
                                         Email: <strong>{DEMO_EMAIL}</strong>
@@ -93,7 +100,7 @@ export default function LoginPage() {
                                     </div>
                                 </div>
 
-                                {/* پسورد + آیکون کپی + متن copied! کنار آیکون */}
+
                                 <div className="flex items-center justify-between">
                                     <Typography variant="body2">
                                         Password: <strong>{DEMO_PASS}</strong>
@@ -150,6 +157,9 @@ export default function LoginPage() {
                             }}
                         />
 
+                        <Button onClick={autoFillHandler} type="button" variant="contained" sx={{ backgroundColor: grey[900] }} size="large">
+                            AutoFill
+                        </Button>
                         <Button type="submit" variant="contained" size="large">
                             Login
                         </Button>
